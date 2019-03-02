@@ -133,7 +133,7 @@
           </div>
         </header>
         <section class="cart">
-          <form class="form cart__inner">
+          <form class="form cart__inner"  name="orderForm">
             <header class="cart__header">
               <h1 class="cart__title">В корзине 99992 товара</h1>
               <button class="btn  btn--text cart__clear-btn" type="button">Очистить корзину</button>
@@ -216,6 +216,7 @@
                     <span class="field-text__input-wrap">
                       <input class="field-text__input" type="text" name="firstname" placeholder="Иван"/>
                     </span>
+                    <span class="form__error" id="firstname__error" style='display: none;'>Поле должно содержать только буквы</span>
                   </label>
                   <label class="field-text  field-text--bg-gray">
                     <span class="field-text__name">Фамилия</span>
@@ -232,7 +233,7 @@
                   <label class="field-text  field-text--bg-gray">
                     <span class="field-text__name">E-mail</span>
                     <span class="field-text__input-wrap">
-                      <input class="field-text__input" type="email" name="name" placeholder="user@mail.com"/>
+                      <input class="field-text__input" type="email" name="email" placeholder="user@mail.com"/>
                     </span>
                   </label>
                 </div>
@@ -377,7 +378,7 @@
                 <p class="checkout__all-price">
                   Итого к оплате: <strong class="checkout__price">2 200 ₽</strong>
                 </p>
-                <button class="btn  btn--shadow">Оплатить</button>
+                <button class="btn  btn--shadow" type="submit">Оплатить</button>
                 <p class="checkout__conditions">
                   Нажимая на кнопку, вы принимаете условия <a href="#">Публичной оферты</a>
                 </p>
@@ -434,6 +435,12 @@
     <script src="js/choices.min.js"></script>
     <script src="js/nouislider.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        initCart();
+      });
+    </script>
     <div class="modal__backdrop"></div>
   </body>
 </html>

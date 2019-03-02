@@ -1,6 +1,70 @@
-ready(function(){
 
+document.addEventListener('DOMContentLoaded', function(){
+   
   // В этом месте должен быть написан ваш код
+
+  //burger
+  
+
+function burgerToggle() {
+  let burgerClose = document.querySelector('.burger');
+  burgerClose.classList.toggle('burger--close');
+  this.classList.toggle('main-nav--open');
+}
+document.getElementById('nav').addEventListener('click', burgerToggle);
+
+
+//разделы меню
+function tabsActive(){
+  this.classList.toggle('tabs__item--active');
+};
+document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
+
+
+//Popup
+
+
+let cardPopup = document.querySelectorAll('.card__inner');
+for (i = 0, len = cardPopup.length; i < len; i++) {
+  cardPopup[i].onclick = function() {
+    showPopup();
+  };
+}
+
+let popupLayer = document.querySelector('.js');
+function showPopup() {  
+  let showPopup = document.querySelector('.modal');
+  showPopup.classList.add('modal--open');
+  popupLayer.classList.add('js-modal-open');
+  return;
+}; 
+
+let closePopup = document.querySelector('.modal__close');
+closePopup.addEventListener('click', event => {
+  
+  let close = document.querySelector('.modal--open');
+  close.classList.remove('modal--open');
+  popupLayer.classList.remove('js-modal-open');
+});
+
+
+//swiper
+
+var mySwiper = new Swiper ('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 4,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.popular__slider-btn--right',
+    prevEl: '.popular__slider-btn--left',
+  },
+
+});
+
+
 
 
 
@@ -56,7 +120,7 @@ ready(function(){
     }
   });
 
-});
+//});
 
 function ready (fn) {
   if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading'){
@@ -65,3 +129,5 @@ function ready (fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
+
+});
