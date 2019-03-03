@@ -21,33 +21,6 @@ function tabsActive(){
 document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
 
 
-//Popup
-
-
-let cardPopup = document.querySelectorAll('.card__inner');
-for (i = 0, len = cardPopup.length; i < len; i++) {
-  cardPopup[i].onclick = function() {
-    showPopup();
-  };
-}
-
-let popupLayer = document.querySelector('.js');
-function showPopup() {  
-  let showPopup = document.querySelector('.modal');
-  showPopup.classList.add('modal--open');
-  popupLayer.classList.add('js-modal-open');
-  return;
-}; 
-
-let closePopup = document.querySelector('.modal__close');
-closePopup.addEventListener('click', event => {
-  
-  let close = document.querySelector('.modal--open');
-  close.classList.remove('modal--open');
-  popupLayer.classList.remove('js-modal-open');
-});
-
-
 //swiper
 
 var mySwiper = new Swiper ('.swiper-container', {

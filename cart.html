@@ -216,29 +216,32 @@
                     <span class="field-text__input-wrap">
                       <input class="field-text__input" type="text" name="firstname" placeholder="Иван"/>
                     </span>
-                    <span class="form__error" id="firstname__error" style='display: none;'>Поле должно содержать только буквы</span>
+                    <span class="form__error" id="firstname__error">поле должно содержать только буквы</span>
                   </label>
                   <label class="field-text  field-text--bg-gray">
                     <span class="field-text__name">Фамилия</span>
                     <span class="field-text__input-wrap">
                       <input class="field-text__input" type="text" name="lastname" placeholder="Помидоров"/>
                     </span>
+                    <span class="form__error" id="lastname__error">поле должно содержать только буквы</span>
                   </label>
                   <label class="field-text  field-text--bg-gray">
                     <span class="field-text__name">Телефон</span>
                     <span class="field-text__input-wrap">
                       <input class="field-text__input" type="tel" name="phone" placeholder="+7 812 000 00 00"/>
                     </span>
+                    <span class="form__error" id="phone__error">формат тел: +7 222 222 22 22</span>
                   </label>
                   <label class="field-text  field-text--bg-gray">
                     <span class="field-text__name">E-mail</span>
                     <span class="field-text__input-wrap">
                       <input class="field-text__input" type="email" name="email" placeholder="user@mail.com"/>
                     </span>
+                    <span class="form__error" id="email__error">неверный формат адреса</span>
                   </label>
                 </div>
               </fieldset>
-              <fieldset class="form__fieldset">
+              <fieldset class="form__fieldset" id="deliverySection">
                 <legend class="form__legend">2. Доставка и адрес</legend>
                 <div class="field-radio">
                   <div class="field-radio__title">Способ доставки</div>
@@ -434,7 +437,6 @@
     </div>
     <script src="js/choices.min.js"></script>
     <script src="js/nouislider.min.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/cart.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function(){

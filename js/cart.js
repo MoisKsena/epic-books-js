@@ -1,161 +1,209 @@
 //validate form
 
-function checkFirstname (firstname){
-  const regEx = /([A-Za-zА-Яа-яЁё]{5,})/gim;
+function queryParent(element, parentSelector) {
+  var parents = document.querySelectorAll(parentSelector);
+
+  for (var i = 0; i < parents.length; i++) {
+    var parent = parents[i];
+
+    if (parent.contains(element)) {
+      return parent;
+    }
+  }
+
+  return null;
+}
+
+
+function checkFirstname(firstname) {
+  const regEx = /([A-Za-zА-Яа-яЁё]{1,})/gim;
 
   return regEx.test(firstname);
 };
 
 function validateFirstname(form, event, element, forceValidation) {
 
-  var shouldValidate = false;
-  if(element.classList.contains('j-edited')  && element.value){
-    shouldValidate = true;
-  }
+  var shouldValidate = element.classList.contains('j-edited');
 
   const firstname = form.elements.firstname;
-  if(forceValidation || shouldValidate && firstname == element){
-    
-    if(checkFirstname (firstname.value)){
-        document.querySelector('#firstname__error').style.display = "none";
-        
-        
+  if (forceValidation || shouldValidate && firstname == element) {
+    var label = queryParent(firstname, 'label.field-text');
 
-        return true;
+    if (checkFirstname(firstname.value)) {
+      label.classList.remove('field-text--error');
+
+      return true;
     } else {
-      document.querySelector('#firstname__error').style.display = "block";
-      document.querySelector('.field-text__input').style.borderColor = "red";
-      
+      label.classList.add('field-text--error');
+
       return false;
     };
   }
 };
 
 function validateLastname(form, event, element, forceValidation) {
-  var shouldValidate = false;
-  if(element.classList.contains('j-edited')  && element.value){
-    shouldValidate = true;
-  }
+
+  var shouldValidate = element.classList.contains('j-edited');
 
   const lastname = form.elements.lastname;
-  if(forceValidation || shouldValidate && lastname == element){   
-    let isValid = true; 
+  if (forceValidation || shouldValidate && lastname == element) {
+    var label = queryParent(lastname, 'label.field-text');
 
-    if(lastname.value) {
-      if(!checkFirstname (lastname.value)) {
-        isValid = false;
-      }     
-    }
+    if (checkFirstname(lastname.value)) {
+      label.classList.remove('field-text--error');
 
-    if(isValid){
-      document.querySelector('#lastname__error').style.display = "none";
-      lastname.classList.remove("input--error");
-    }else{
-      document.querySelector('#lastname__error').style.display = "block";
-      lastname.classList.add("input--error");
-    }
+      return true;
+    } else {
+      label.classList.add('field-text--error');
 
-    return isValid;
+      return false;
+    };
   }
 };
 
-function checkPhone (phone){
-  const regEx = /^(\+7)([0-9]{10})$/gim;
+function checkPhone(phone) {
+  const regEx = /^(\+7\s*)([0-9]{3}\s*)([0-9]{3}\s*)([0-9]{2}\s*)([0-9]{2})$/gim;
 
   return regEx.test(phone);
 };
 
 function validatePhone(form, event, element, forceValidation) {
-  
-  var shouldValidate = false;
-  if(element.classList.contains('j-edited')  && element.value){
-    shouldValidate = true;
-  }
+
+  var shouldValidate = element.classList.contains('j-edited');
 
   const phone = form.elements.phone;
-  if(forceValidation || shouldValidate && phone == element){
-    if(checkPhone (phone.value)){
-        document.querySelector('#phone__error').style.display = "none";
-        phone.classList.remove("input--error");
+  if (forceValidation || shouldValidate && phone == element) {
+    var label = queryParent(phone, 'label.field-text');
 
-        return true;
+    if (checkPhone(phone.value)) {
+      label.classList.remove('field-text--error');
+
+      return true;
     } else {
-      document.querySelector('#phone__error').style.display = "block";
-      phone.classList.add("input--error");
-      
+      label.classList.add('field-text--error');
+
       return false;
     };
   }
 };
 
 
-function checkEmail (email){
+function checkEmail(email) {
   const regEx = /(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/gim;
 
   return regEx.test(email);
 };
 
 function validateEmail(form, event, element, forceValidation) {
-  var shouldValidate = false;
-  if(element.classList.contains('j-edited')  && element.value){
-    shouldValidate = true;
-  }
- 
+
+  var shouldValidate = element.classList.contains('j-edited');
+
   const email = form.elements.email;
-  if(forceValidation || shouldValidate && email == element){
+  if (forceValidation || shouldValidate && email == element) {
+    var label = queryParent(email, 'label.field-text');
+
+    if (checkEmail(email.value)) {
+      label.classList.remove('field-text--error');
+
+      return true;
+    } else {
+      label.classList.add('field-text--error');
+
+      return false;
+    };
+  }
+};
+
+function validateDeliveryFromStore(form, event, element, forceValidation) {};
+
+function validateDeliveryCourier(form, event, element, forceValidation) {
+
+  var shouldValidate = element.classList.contains('j-edited');
+  var deliveryAddress = deliverySection.querySelector('[name=delivery-address]');
+  if (forceValidation || shouldValidate && delivery-address == element) {
+    var label = queryParent(deliveryAddress, 'label.field-text');
     
-    let isValid = true;
-
-    if(email.value) {
-      if(!checkEmail (email.value)) {
-        isValid = false;
-      }     
-    }
-
-    if(isValid){
-      document.querySelector('#email__error').style.display = "none";
-      email.classList.remove("input--error");
+    if(deliveryAddress.value){
+      return true;
     }else{
-      document.querySelector('#email__error').style.display = "block";
-      email.classList.add("input--error");
-    }
+      label.classList.add('field-text--error');
 
-    return isValid;
-    }  
-  };
+      return false;
+    }
+  }
+};
+
+function validateDeliveryPost(form, event, element, forceValidation) {
+  var shouldValidate = element.classList.contains('j-edited');
+  var deliveryAddress = deliverySection.querySelector('[name=post-address]');
+  if (forceValidation || shouldValidate && post-address == element) {
+    var label = queryParent(deliveryAddress, 'label.field-text');
+    
+    if(deliveryAddress.value){
+      return true;
+    }else{
+      label.classList.add('field-text--error');
+
+      return false;
+    }
+  }
+};
+
+
+
 
 function validateForm(form, event, element, forceValidation) {
-  if(event == 'blur' && element.value && element.type != 'checkbox') {
+  if (event == 'blur' && element.value && element.type != 'checkbox' && element.type != 'radio') {
     element.classList.add('j-edited');
   }
   validateFirstname(form, event, element, forceValidation);
   validateLastname(form, event, element, forceValidation);
   validatePhone(form, event, element, forceValidation);
   validateEmail(form, event, element, forceValidation);
+  validateDeliveryFromStore(form, event, element, forceValidation);
+  validateDeliveryCourier(form, event, element, forceValidation);
+  validateDeliveryPost(form, event, element, forceValidation);
 
   return false;
 };
 
+function initDelivery() {
+  deliverySection.querySelectorAll('input[type=radio][name=delivery]').forEach(function(radioDelivery) {
+    radioDelivery.addEventListener('change', function(){
+
+      deliverySection.querySelectorAll('.cart__delivery').forEach(function(deliveryHide) {
+        deliveryHide.classList.add('cart__delivery--hidden');
+      })
 
 
-
-
-function initCart(){
-  let orderForm = document.forms.orderForm;
-
-orderForm.addEventListener('submit',  function(e){
-  e.preventDefault();
-
-  return validateForm(this, 'submit', this, true);
-});
-
-orderForm.querySelectorAll('input')
-  .forEach(function(input) {
-    if(input.type != 'checkbox') {
-      input.addEventListener('input', function(){validateForm(orderForm, 'input', this, false);});
-      input.addEventListener('blur', function(){validateForm(orderForm, 'blur', this, false);});
-    }
+      var deliveryShow = deliverySection.querySelector('#cart-delivery-'+this.value);
+      deliveryShow.classList.remove('cart__delivery--hidden');
+    });
   });
 };
 
 
+function initCart() {
+  let orderForm = document.forms.orderForm;
+
+  orderForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    return validateForm(this, 'submit', this, true);
+  });
+
+  orderForm.querySelectorAll('input')
+    .forEach(function (input) {
+      if (input.type != 'checkbox') {
+        input.addEventListener('input', function () {
+          validateForm(orderForm, 'input', this, false);
+        });
+        input.addEventListener('blur', function () {
+          validateForm(orderForm, 'blur', this, false);
+        });
+      }
+    });
+
+    initDelivery();
+
+};

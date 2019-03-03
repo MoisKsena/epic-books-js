@@ -2,7 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function(){
   function filters() {
-    this.classList.toggle('filters--open');
+
+    document.querySelector('#filters').classList.toggle('filters--open');
   }
-  document.getElementById('filters').addEventListener('click', filters);
+  document.getElementById('filters-trigger').addEventListener('click', filters);
 });
