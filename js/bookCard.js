@@ -39,8 +39,12 @@ document.addEventListener('DOMContentLoaded', function(){
       document.querySelector('.rating__review').innerHTML = ' ';
 
       let tableInfo = document.querySelector('.product__table-info');
-      tableInfo.getElementsByTagName('td').innerHTML = ' ';
-      
+      var tds = tableInfo.getElementsByTagName('td');
+      for (let tdindex = 0; tdindex < tds.length; tdindex++) {
+        const td = tds[tdindex];
+        td.innerHTML = ' ';
+      }
+  
       document.querySelector('.product__descr>p').innerHTML = book.desc;
       document.querySelector('.btn__sm-price').innerHTML = (book.price/100)+' ₽';
 
@@ -72,15 +76,16 @@ document.addEventListener('DOMContentLoaded', function(){
     closePopup();
   });
 
-
+ 
   var page = document.querySelector(".js-modal-open");
   page.addEventListener('click', event => {
-    // if(page.includes('.modal--open')){
-    //   event.preventDefault();
-    //   return;
-    // }
-    closePopup();
-    
+    var popUp = document.querySelector(".modal__dialog");
+    var isInPopUp = popUp.contains(event.srcElement) || popUp == event.srcElement;
+    if(!isInPopUp){
+      event.preventDefault(); 
+        
+      closePopup();
+    }; 
   });
 
 

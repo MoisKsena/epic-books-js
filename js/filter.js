@@ -1,5 +1,5 @@
 //filters
-
+document.querySelector('#filters').classList.remove('filters--open');
 document.addEventListener('DOMContentLoaded', function(){
   function filters() {
 
