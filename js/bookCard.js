@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
       newCard.querySelector('.card__price').textContent = (books[i].price/100) + ' ₽';
       newCard.querySelector('.card__title').textContent = books[i].name;
 
-      newCard.querySelector('.card__buy').setAttribute('bookid', books[i].id);
+      newCard.querySelector('article').setAttribute('bookid', books[i].id);
     
       fragment.appendChild(newCard);
     };
@@ -28,27 +28,52 @@ document.addEventListener('DOMContentLoaded', function(){
   let cardPopup = document.querySelectorAll('.card__inner');
   for (i = 0, len = cardPopup.length; i < len; i++) {
     cardPopup[i].onclick = function() {
-      showPopup();
+      let bookArt = queryParent(this, 'article');
+      let bookid = bookArt.getAttribute('bookid');
+      let book = books.find(function(b) {
+        return b.id == bookid;
+      });
+
+      showPopup(book);
     };
   }
 
   let popupLayer = document.querySelector('.js');
-  function showPopup() {  
+  function showPopup(book) {  
     let showPopup = document.querySelector('.modal');
+
     showPopup.classList.add('modal--open');
     popupLayer.classList.add('js-modal-open');
-    return;
   }; 
 
-  let closePopup = document.querySelector('.modal__close');
-  closePopup.addEventListener('click', event => {
-    
-    let close = document.querySelector('.modal--open');
-    close.classList.remove('modal--open');
+  
+  function closePopup() {
+    let closePopup = document.querySelector('.modal--open');
+
+    closePopup.classList.remove('modal--open');
     popupLayer.classList.remove('js-modal-open');
+  };
+
+  let btnClosePopup = document.querySelector('.modal__close');
+  btnClosePopup.addEventListener('click', event => { 
+    closePopup();
   });
 
 
+  var page = document.querySelector(".js-modal-open");
+  page.addEventListener('click', event => {
+    debugger
+    closePopup();
+  });
+
+
+// вывод данных книги в окно попапа
+
+let innerPopup = document.querySelector('.product');
+
+
+
+  
 
 });
 

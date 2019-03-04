@@ -1,41 +1,41 @@
+function queryParent(element, parentSelector) {
+  var parents = document.querySelectorAll(parentSelector);
 
-document.addEventListener('DOMContentLoaded', function(){
-   
+  for (var i = 0; i < parents.length; i++) {
+    var parent = parents[i];
+
+    if (parent.contains(element)) {
+      return parent;
+    }
+  }
+
+  return null;
+}
+
+
+ready(function () {
+
   // В этом месте должен быть написан ваш код
 
   //burger
-  
-
-function burgerToggle() {
-  let burgerClose = document.querySelector('.burger');
-  burgerClose.classList.toggle('burger--close');
-  this.classList.toggle('main-nav--open');
-}
-document.getElementById('nav').addEventListener('click', burgerToggle);
 
 
-//разделы меню
-function tabsActive(){
-  this.classList.toggle('tabs__item--active');
-};
-document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
+  function burgerToggle() {
+    let burgerClose = document.querySelector('.burger');
+    burgerClose.classList.toggle('burger--close');
+    this.classList.toggle('main-nav--open');
+  }
+  document.getElementById('nav').addEventListener('click', burgerToggle);
 
 
-//swiper
+  //разделы меню
+  function tabsActive() {
+    this.classList.toggle('tabs__item--active');
+  };
 
-var mySwiper = new Swiper ('.swiper-container', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 4,
+  document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.popular__slider-btn--right',
-    prevEl: '.popular__slider-btn--left',
-  },
 
-});
 
 
 
@@ -48,7 +48,7 @@ var mySwiper = new Swiper ('.swiper-container', {
   // браузера не было ошибок.
 
   // Кастомные селекты (кроме выбора языка)
-  new Choices('.field-select:not(#lang) select.field-select__select', {
+ /* new Choices('.field-select:not(#lang) select.field-select__select', {
     searchEnabled: false,
     shouldSort: false,
   });
@@ -74,7 +74,8 @@ var mySwiper = new Swiper ('.swiper-container', {
         },
       };
     }
-  });
+  });*/
+
   function getLangInSelectIcon(value) {
     if (value == 'ru') return '<span class="field-select__lang-ru"></span>';
     else if (value == 'en') return '<span class="field-select__lang-en"></span>';
@@ -82,7 +83,7 @@ var mySwiper = new Swiper ('.swiper-container', {
   }
 
   // Выбор диапазона цен
-  var slider = document.getElementById('price-range');
+  /*var slider = document.getElementById('price-range');
   noUiSlider.create(slider, {
     start: [400, 1000],
     connect: true,
@@ -91,16 +92,14 @@ var mySwiper = new Swiper ('.swiper-container', {
       'min': 200,
       'max': 2000
     }
-  });
+  });*/
 
-//});
+});
 
-function ready (fn) {
-  if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading'){
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
     fn();
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
-
-});

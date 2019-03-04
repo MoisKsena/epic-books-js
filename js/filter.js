@@ -6,4 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector('#filters').classList.toggle('filters--open');
   }
   document.getElementById('filters-trigger').addEventListener('click', filters);
+
+  
 });
