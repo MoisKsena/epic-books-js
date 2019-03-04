@@ -33,13 +33,25 @@ document.addEventListener('DOMContentLoaded', function(){
       let book = books.find(function(b) {
         return b.id == bookid;
       });
+      
+      document.querySelector('.product__img-wrap>img').src = 'https://books.marinintim.com' + book.thumb_url;
+      document.querySelector('.product__title').innerHTML = book.name;
+      document.querySelector('.rating__review').innerHTML = ' ';
+
+      let tableInfo = document.querySelector('.product__table-info');
+      tableInfo.getElementsByTagName('td').innerHTML = ' ';
+      
+      document.querySelector('.product__descr>p').innerHTML = book.desc;
+      document.querySelector('.btn__sm-price').innerHTML = (book.price/100)+' ₽';
 
       showPopup(book);
     };
   }
 
+  
+
   let popupLayer = document.querySelector('.js');
-  function showPopup(book) {  
+  function showPopup() {  
     let showPopup = document.querySelector('.modal');
 
     showPopup.classList.add('modal--open');
@@ -56,20 +68,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
   let btnClosePopup = document.querySelector('.modal__close');
   btnClosePopup.addEventListener('click', event => { 
+    
     closePopup();
   });
 
 
   var page = document.querySelector(".js-modal-open");
   page.addEventListener('click', event => {
-    debugger
+    // if(page.includes('.modal--open')){
+    //   event.preventDefault();
+    //   return;
+    // }
     closePopup();
+    
   });
 
 
-// вывод данных книги в окно попапа
-
-let innerPopup = document.querySelector('.product');
 
 
 
