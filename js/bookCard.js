@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
       newCard.querySelector('.card__price').textContent = (books[i].price/100) + ' ₽';
       newCard.querySelector('.card__title').textContent = books[i].name;
 
-      newCard.querySelector('article').setAttribute('bookid', books[i].id);
+      newCard.querySelector('article').dataset.bookid = books[i].id;
     
       fragment.appendChild(newCard);
     };
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
   for (i = 0, len = cardPopup.length; i < len; i++) {
     cardPopup[i].onclick = function() {
       let bookArt = queryParent(this, 'article');
-      let bookid = bookArt.getAttribute('bookid');
+      let bookid = bookArt.dataset.bookid;
       let book = books.find(function(b) {
         return b.id == bookid;
       });
