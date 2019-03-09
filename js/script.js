@@ -1,3 +1,24 @@
+var cart = createCart();
+
+cart.onUpdate(function(item, action)
+{
+  var total = this.getTotal();
+  console.log('Товар: ' + item.item.name + ' был ' + action + ' в кол-ве ' + item.quantity + '. Всего: ' + total.total + '; Скидки: ' + total.discount + '; Итого: ' + total.grandTotal);
+
+  let counterBook = document.querySelector('.page-header__cart-num');
+  counterBook.innerHTML = this.getTotal().totalItems;
+});
+
+cart.onUpdate(function(item, action)
+{
+  var total = this.getTotal();
+  console.log('А тута я считаю всиво и скидки');
+
+
+
+  
+});
+
 function queryParent(element, parentSelector) {
   var parents = document.querySelectorAll(parentSelector);
 
@@ -17,8 +38,12 @@ ready(function () {
 
   // В этом месте должен быть написан ваш код
 
-  //burger
+  // cart
 
+  let counterBook = document.querySelector('.page-header__cart-num');
+  counterBook.innerHTML = cart.getTotal().totalItems;
+
+  //burger
 
   function burgerToggle() {
     let burgerClose = document.querySelector('.burger');
@@ -35,10 +60,39 @@ ready(function () {
 
   document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
 
+  // btn "в корзину"
+
+
+  function findParentByCssClass(element, cssClass)
+  {
+    while(true)
+    {
+      if(element == document.body) return false;
+      if(element.classList.contains(cssClass)) return element;
+
+      element = element.parentNode;
+    }
+  }
+  document.querySelector('.page__content').addEventListener('click', function (evt){
+    let btn = findParentByCssClass(evt.srcElement, 'card__buy');
+    if(btn)
+    {
+      evt.preventDefault();
+      let article = queryParent(btn, 'article'); //добавить карточку в корзину
+
+      let bookid = article.dataset.bookid;
+      let book = books.find(function(b) {
+        return b.id == bookid;
+      });
+
+      cart.add(book);
 
 
 
 
+
+  }
+})
 
 
   // ВНИМАНИЕ!
@@ -102,4 +156,4 @@ function ready(fn) {
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
-}
+};
