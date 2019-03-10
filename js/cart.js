@@ -1,7 +1,5 @@
 //validate form
 
-
-
 function checkFirstname(firstname) {
   const regEx = /([A-Za-zА-Яа-яЁё]{1,})/gim;
 
@@ -169,6 +167,15 @@ function initDelivery() {
   });
 };
 
+function initCartView() {
+  let counterBookString = document.querySelector('.cart__title'); 
+  counterBookString.innerHTML = 'В корзине ' + cart.getTotal().totalItems + ' товара(ов)';
+};
+
+function handleCartUpdate(item, action)
+{
+
+}
 
 function initCart() {
   let orderForm = document.forms.orderForm;
@@ -192,5 +199,10 @@ function initCart() {
     });
 
     initDelivery();
+
+    initCartView();
+    
+    cart.onUpdate(handleCartUpdate);
+    
 
 };

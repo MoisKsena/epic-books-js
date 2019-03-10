@@ -34,19 +34,22 @@ document.addEventListener('DOMContentLoaded', function(){
         return b.id == bookid;
       });
       
-      document.querySelector('.product__img-wrap>img').src = 'https://books.marinintim.com' + book.thumb_url;
-      document.querySelector('.product__title').innerHTML = book.name;
-      document.querySelector('.rating__review').innerHTML = ' ';
+      var productDiv = document.querySelector('div.product');
+      productDiv.dataset.bookid = bookid;
 
-      let tableInfo = document.querySelector('.product__table-info');
+      productDiv.querySelector('.product__img-wrap>img').src = 'https://books.marinintim.com' + book.thumb_url;
+      productDiv.querySelector('.product__title').innerHTML = book.name;
+      productDiv.querySelector('.rating__review').innerHTML = ' ';
+
+      let tableInfo = productDiv.querySelector('.product__table-info');
       var tds = tableInfo.getElementsByTagName('td');
       for (let tdindex = 0; tdindex < tds.length; tdindex++) {
         const td = tds[tdindex];
         td.innerHTML = ' ';
       }
   
-      document.querySelector('.product__descr>p').innerHTML = book.desc;
-      document.querySelector('.btn__sm-price').innerHTML = (book.price/100)+' ₽';
+      productDiv.querySelector('.product__descr>p').innerHTML = book.desc;
+      productDiv.querySelector('.btn__sm-price').innerHTML = (book.price/100)+' ₽';
 
       showPopup(book);
     };
