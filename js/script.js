@@ -8,14 +8,16 @@ function updateQuantityEl(cart) {
 
 var cart = createCart();
 
-cart.onUpdate(function(item, action)
-{
+cart.onUpdate(function (item, action) {
   var total = this.getTotal();
-  console.log('Товар: ' + item.item.name + ' был ' + action + ' в кол-ве ' + item.quantity + '. Всего: ' + total.total + '; Скидки: ' + total.discount + '; Итого: ' + total.grandTotal);
-
+  if(action=='clear'){console.log('очистка корзины');}
+  else{
+    console.log('Товар: ' + item.item.name + ' был ' + action + ' в кол-ве ' + item.quantity + '. Всего: ' + total.total + '; Скидки: ' + total.discount + '; Итого: ' + total.grandTotal);
+  }
+  
   updateQuantityEl(this);
 
-  
+
 });
 
 
@@ -34,6 +36,17 @@ function queryParent(element, parentSelector) {
 }
 
 
+function findParentByCssClass(element, cssClass) {
+  while (true) {
+    if (element == document.body) return false;
+    if (element.classList.contains(cssClass)) return element;
+
+    element = element.parentNode;
+  }
+}
+
+
+
 ready(function () {
 
   // В этом месте должен быть написан ваш код
@@ -42,7 +55,7 @@ ready(function () {
 
   updateQuantityEl(cart);
 
-  
+
 
   //burger
 
@@ -61,39 +74,25 @@ ready(function () {
 
   document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
 
+
+
   // btn "в корзину"
 
-
-  function findParentByCssClass(element, cssClass)
-  {
-    while(true)
-    {
-      if(element == document.body) return false;
-      if(element.classList.contains(cssClass)) return element;
-
-      element = element.parentNode;
-    }
-  }
-  document.querySelector('.page__content').addEventListener('click', function (evt){
+  
+  document.querySelector('.page__content').addEventListener('click', function (evt) {
     let btn = findParentByCssClass(evt.srcElement, 'j-buy');
-    if(btn)
-    {
+    if (btn) {
       evt.preventDefault();
-      let article = queryParent(btn, 'article') || queryParent(btn, 'div.product') ; //добавить карточку в корзину
+      let article = queryParent(btn, 'article') || queryParent(btn, 'div.product'); //добавить карточку в корзину
 
       let bookid = article.dataset.bookid;
-      let book = books.find(function(b) {
+      let book = books.find(function (b) {
         return b.id == bookid;
       });
 
       cart.add(book);
-
-
-
-
-
-  }
-})
+    }
+  })
 
 
   // ВНИМАНИЕ!
@@ -103,33 +102,33 @@ ready(function () {
   // браузера не было ошибок.
 
   // Кастомные селекты (кроме выбора языка)
- /* new Choices('.field-select:not(#lang) select.field-select__select', {
-    searchEnabled: false,
-    shouldSort: false,
-  });
-  // Кастомный селект выбора языка отдельно
-  new Choices('#lang select.field-select__select', {
-    searchEnabled: false,
-    shouldSort: false,
-    callbackOnCreateTemplates: function (template) {
-      return {
-        item: (classNames, data) => {
-          return template(`
-            <div class="${classNames.item} ${data.highlighted ? classNames.highlightedState : classNames.itemSelectable}" data-item data-id="${data.id}" data-value="${data.value}" ${data.active ? 'aria-selected="true"' : ''} ${data.disabled ? 'aria-disabled="true"' : ''}>
-              ${getLangInSelectIcon(data.value)} ${data.label.substr(0,3)}
-            </div>
-          `);
-        },
-        choice: (classNames, data) => {
-          return template(`
-            <div class="${classNames.item} ${classNames.itemChoice} ${data.disabled ? classNames.itemDisabled : classNames.itemSelectable}" data-select-text="${this.config.itemSelectText}" data-choice ${data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable'} data-id="${data.id}" data-value="${data.value}" ${data.groupId > 0 ? 'role="treeitem"' : 'role="option"'}>
-              ${getLangInSelectIcon(data.value)} ${data.label}
-            </div>
-          `);
-        },
-      };
-    }
-  });*/
+  /* new Choices('.field-select:not(#lang) select.field-select__select', {
+     searchEnabled: false,
+     shouldSort: false,
+   });
+   // Кастомный селект выбора языка отдельно
+   new Choices('#lang select.field-select__select', {
+     searchEnabled: false,
+     shouldSort: false,
+     callbackOnCreateTemplates: function (template) {
+       return {
+         item: (classNames, data) => {
+           return template(`
+             <div class="${classNames.item} ${data.highlighted ? classNames.highlightedState : classNames.itemSelectable}" data-item data-id="${data.id}" data-value="${data.value}" ${data.active ? 'aria-selected="true"' : ''} ${data.disabled ? 'aria-disabled="true"' : ''}>
+               ${getLangInSelectIcon(data.value)} ${data.label.substr(0,3)}
+             </div>
+           `);
+         },
+         choice: (classNames, data) => {
+           return template(`
+             <div class="${classNames.item} ${classNames.itemChoice} ${data.disabled ? classNames.itemDisabled : classNames.itemSelectable}" data-select-text="${this.config.itemSelectText}" data-choice ${data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable'} data-id="${data.id}" data-value="${data.value}" ${data.groupId > 0 ? 'role="treeitem"' : 'role="option"'}>
+               ${getLangInSelectIcon(data.value)} ${data.label}
+             </div>
+           `);
+         },
+       };
+     }
+   });*/
 
   function getLangInSelectIcon(value) {
     if (value == 'ru') return '<span class="field-select__lang-ru"></span>';

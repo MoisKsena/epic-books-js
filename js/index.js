@@ -1,12 +1,8 @@
 
-
-
-
 document.addEventListener('DOMContentLoaded', function(){
   
 
   //swiper
-
 var mySwiper = new Swiper ('.swiper-container', {
   // Optional parameters
   direction: 'horizontal',
@@ -22,7 +18,6 @@ var mySwiper = new Swiper ('.swiper-container', {
 });
 
 
-    
-
+  
   
 });

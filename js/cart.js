@@ -105,12 +105,12 @@ function validateDeliveryCourier(form, event, element, forceValidation) {
 
   var shouldValidate = element.classList.contains('j-edited');
   var deliveryAddress = deliverySection.querySelector('[name=delivery-address]');
-  if (forceValidation || shouldValidate && delivery-address == element) {
+  if (forceValidation || shouldValidate && delivery - address == element) {
     var label = queryParent(deliveryAddress, 'label.field-text');
-    
-    if(deliveryAddress.value){
+
+    if (deliveryAddress.value) {
       return true;
-    }else{
+    } else {
       label.classList.add('field-text--error');
 
       return false;
@@ -121,12 +121,12 @@ function validateDeliveryCourier(form, event, element, forceValidation) {
 function validateDeliveryPost(form, event, element, forceValidation) {
   var shouldValidate = element.classList.contains('j-edited');
   var deliveryAddress = deliverySection.querySelector('[name=post-address]');
-  if (forceValidation || shouldValidate && post-address == element) {
+  if (forceValidation || shouldValidate && post - address == element) {
     var label = queryParent(deliveryAddress, 'label.field-text');
-    
-    if(deliveryAddress.value){
+
+    if (deliveryAddress.value) {
       return true;
-    }else{
+    } else {
       label.classList.add('field-text--error');
 
       return false;
@@ -153,28 +153,153 @@ function validateForm(form, event, element, forceValidation) {
 };
 
 function initDelivery() {
-  deliverySection.querySelectorAll('input[type=radio][name=delivery]').forEach(function(radioDelivery) {
-    radioDelivery.addEventListener('change', function(){
+  deliverySection.querySelectorAll('input[type=radio][name=delivery]').forEach(function (radioDelivery) {
+    radioDelivery.addEventListener('change', function () {
 
-      deliverySection.querySelectorAll('.cart__delivery').forEach(function(deliveryHide) {
+      deliverySection.querySelectorAll('.cart__delivery').forEach(function (deliveryHide) {
         deliveryHide.classList.add('cart__delivery--hidden');
       })
 
 
-      var deliveryShow = deliverySection.querySelector('#cart-delivery-'+this.value);
+      var deliveryShow = deliverySection.querySelector('#cart-delivery-' + this.value);
       deliveryShow.classList.remove('cart__delivery--hidden');
     });
   });
 };
 
+
+//пересчет общей стоимости корзины
+
+function updateCartTotal(cart) {
+  var total = cart.getTotal();
+
+  let counterBookString = document.querySelector('.cart__title');
+  counterBookString.innerHTML = 'В корзине ' + total.totalItems + ' товара(ов)';
+
+  let counterGrandTotal = document.querySelectorAll('.j-grandTotal');
+  for (var i = 0; i < counterGrandTotal.length; i++) {
+    counterGrandTotal[i].innerHTML = total.grandTotal + ' ₽';
+  };
+
+}
+
+//статика
 function initCartView() {
-  let counterBookString = document.querySelector('.cart__title'); 
-  counterBookString.innerHTML = 'В корзине ' + cart.getTotal().totalItems + ' товара(ов)';
-};
+  updateCartTotal(cart);
+  initProducts();
+  btnInc();
+  btnDec();
+  btnRemove();
+  btnClear();
+}
 
-function handleCartUpdate(item, action)
-{
 
+
+function btnInc() {
+  document.querySelector('.cart__table').addEventListener('click', function (evt) {
+    let btn = findParentByCssClass(evt.srcElement, 'field-num__btn-plus');
+
+    if (btn) {
+      evt.preventDefault();
+      let tr = queryParent(btn, 'tr.cart__product');
+      let bookid = tr.dataset.bookid;
+
+      cart.incQuantity(bookid);
+    }
+  });
+}
+
+function btnDec() {
+  document.querySelector('.cart__table').addEventListener('click', function (evt) {
+    let btn = findParentByCssClass(evt.srcElement, 'field-num__btn-minus');
+
+    if (btn) {
+      evt.preventDefault();
+      let tr = queryParent(btn, 'tr.cart__product');
+      let bookid = tr.dataset.bookid;
+
+      cart.decQuantity(bookid);
+    }
+  });
+}
+
+function btnRemove() {
+  document.querySelector('.cart__table').addEventListener('click', function (evt) {
+    let btn = findParentByCssClass(evt.srcElement, 'cart__product-del-btn');
+
+    if (btn) {
+      evt.preventDefault();
+      let tr = queryParent(btn, 'tr.cart__product');
+      let bookid = tr.dataset.bookid;
+
+      cart.remove(bookid);
+    }
+  });
+}
+
+function btnClear() {
+  document.querySelector('.cart__header').addEventListener('click', function (evt) {
+    let btn = findParentByCssClass(evt.srcElement, 'cart__clear-btn');
+
+    if (btn) {
+      evt.preventDefault();
+    
+      cart.clear();
+    }
+  });
+}
+
+function updateProtuctView(cart, item) {
+  var tr = document.querySelector('tr[data-bookid="' + item.item.id + '"]');
+  let plusItem = tr.querySelector('.field-num__input');
+  plusItem.value = item.quantity;
+
+  let priceItem = tr.querySelector('.cart__item-price');
+  priceItem.textContent = item.totalPrice + ' ₽';
+}
+
+//рендер выбраного товара в корзине
+function initProducts() {
+  const fragment = document.createDocumentFragment();
+  const template = document.querySelector('#shopping-template');
+  let cartItems = cart.getItems();
+  for (i = 0; i < cartItems.length; i++) {
+    var cartItem = cartItems[i];
+    const newCartTemplate = template.content.cloneNode(true);
+    newCartTemplate.querySelector('.cart__item-img').src = 'https://books.marinintim.com' + cartItem.item.thumb_url;
+    newCartTemplate.querySelector('.cart__item-name').textContent = cartItem.item.name;
+    newCartTemplate.querySelector('.cart__item-price').textContent = cartItem.totalPrice + ' ₽';
+    newCartTemplate.querySelector('.field-num__input').value = cartItem.quantity;
+    newCartTemplate.querySelector('tr').dataset.bookid = cartItem.item.id;
+    fragment.appendChild(newCartTemplate);
+  };
+  document.querySelector('.cart__table').appendChild(fragment);
+}
+
+//динамика
+function handleCartUpdate(item, action) {
+  if(action == 'clear')
+  {
+    clearCartView(this);
+  } else  if (action == 'remove') {
+    removeProductView(item);
+  } else{
+    updateProtuctView(this, item);
+  }
+  updateCartTotal(this);
+}
+
+function clearCartView(cart){
+  let trAll = document.querySelectorAll('.cart__product');
+  for(let i=0; i < trAll.length; i++){
+    let tr = trAll[i];
+    tr.parentNode.removeChild(tr);
+  }
+}
+
+function removeProductView(item) {
+  var tr = document.querySelector('tr[data-bookid="' + item.item.id + '"]');
+  tr.parentNode.removeChild(tr);
 }
 
 function initCart() {
@@ -198,11 +323,11 @@ function initCart() {
       }
     });
 
-    initDelivery();
+  initDelivery();
 
-    initCartView();
-    
-    cart.onUpdate(handleCartUpdate);
-    
+  initCartView();
+
+  cart.onUpdate(handleCartUpdate);
+
 
 };
