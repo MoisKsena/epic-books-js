@@ -144,6 +144,25 @@ function createCart() {
     });
   };
 
+  Cart.prototype.setQuantity = function (itemid, quantity) {
+    var self = this;
+    doCart(function (cart, commitChanges) {
+
+      let sameItem = cart.items.find(storageItem => storageItem.item.id == itemid);
+  
+      //debugger
+
+      if (sameItem && quantity) {
+        
+        sameItem.quantity = quantity;
+        recalculateItem(sameItem);
+        commitChanges();
+        // уведомляет всех подписчиков о добавленом элементе
+        _notifyListeners(self, sameItem, 'set');
+      }
+    });
+  };
+
 
   Cart.prototype.clear = function () {
     var self = this;

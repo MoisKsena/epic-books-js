@@ -4,357 +4,612 @@ const books = [{
   "desc": "",
   "price": 69700,
   "id": "klienty-na-vsyu-zhizn",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Карл Сьюэлл",
+  "publish": "МИФ",
+  "year": "2010",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/tsennye-resheniya",
   "name": "Ценные решения",
   "desc": "Как работать с ценами, чтобы прибыль росла",
   "price": 63700,
   "id": "tsennye-resheniya",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Роман Тарасенко",
+  "publish": "МИФ",
+  "year": "2012",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/45-tatuirovok-prodavana",
   "name": "45 татуировок продавана",
   "desc": "Правила для тех, кто продаёт и управляет продажами",
   "price": 67600,
   "id": "45-tatuirovok-prodavana",
-  "type": "business"
+  "type": "business",
+  "autor":"Максим Батырев",
+  "publish": "АСТ",
+  "year": "2010",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/dnevnik-khudozhnika-naturalista",
   "name": "Дневник художника-натуралиста",
   "desc": "Как рисовать животных, птиц, растения и пейзажи",
   "price": 169500,
   "id": "dnevnik-khudozhnika-naturalista",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Джон Лоуз",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/otkrytoe-myshlenie",
   "name": "Открытое мышление",
   "desc": "Как выйти за пределы своей точки зрения",
   "price": 62500,
   "id": "otkrytoe-myshlenie",
-  "type": "business"
+  "type": "business",
+  "autor":"Арбингер",
+  "publish": "МИФ",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/ne-delay-eto",
   "name": "Не делай это",
   "desc": "Тайм-менеджмент для творческих людей",
   "price": 85500,
   "id": "ne-delay-eto",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Дональд Рос",
+  "publish": "КСД",
+  "year": "2018",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/ya-khochu-bolshe-idey",
   "name": "Я хочу больше идей!",
   "desc": "Более 100 техник и упражнений для развития творческого мышления",
   "price": 66700,
   "id": "ya-khochu-bolshe-idey",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Стив Роулинг",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/urban-jungle",
   "name": "Urban Jungle",
   "desc": "Как создать уютный интерьер с помощью растений",
   "price": 80700,
   "id": "urban-jungle",
-  "type": "creativity"
+  "type": "design",
+  "autor":"Игорь Йосифович",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/na-kryuchke",
   "name": "На крючке",
   "desc": "Как создавать продукты, формирующие привычки",
   "price": 59500,
   "id": "na-kryuchke",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Нир Эяль",
+  "publish": "МИФ",
+  "year": "2015",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/vmeste-bystree",
   "name": "Вместе быстрее",
   "desc": "12 принципов командной эффективности",
   "price": 102500,
   "id": "vmeste-bystree",
-  "type": "business"
+  "type": "business",
+  "autor":"Лора Стэк",
+  "publish": "КСД",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/iskrenniy-servis",
   "name": "Искренний сервис",
   "desc": "Как мотивировать сотрудников сделать для клиента больше, чем достаточно. Даже когда шеф не смотрит",
   "price": 63700,
   "id": "iskrenniy-servis",
-  "type": "marketing"
+  "type": "psychology",
+  "autor":"Лора Стэк",
+  "publish": "Олимп-Бизнес",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/okhotnik-za-ideyami",
   "name": "Охотник за идеями",
   "desc": "Как найти дело жизни и сделать мир лучше",
   "price": 67100,
   "id": "okhotnik-za-ideyami",
-  "type": "business"
+  "type": "business",
+  "autor":"Семён Кибало",
+  "publish": "Олимп-Бизнес",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/psikhologiya",
   "name": "Психология",
   "desc": "Люди, концепции, эксперименты",
   "price": 68800,
   "id": "psikhologiya",
-  "type": "science"
+  "type": "psychology",
+  "autor":"Пол Клейман",
+  "publish": "Олимп-Бизнес",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/tramp-i-epokha-postpravdy",
   "name": "Трамп и эпоха постправды",
-  "desc": "",
+  "desc": "Он предлагает провокационное, но при этом сбалансированное расследование истоков разворачивающейся культурно-общественной и политической ситуации в Америке.",
   "price": 72200,
   "id": "tramp-i-epokha-postpravdy",
-  "type": "science"
+  "type": "science",
+  "autor":"Кен Уилбер",
+  "publish": "АСТ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/biznes-kak-igra",
   "name": "Бизнес как игра",
   "desc": "Грабли российского бизнеса и неожиданные решения",
   "price": 69700,
   "id": "biznes-kak-igra",
-  "type": "business"
+  "type": "marketing",
+  "autor":"Дмитрий Борисов",
+  "publish": "Эксмо",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/udovolstvie-ot-x",
   "name": "Удовольствие от x",
   "desc": "Увлекательная экскурсия в мир математики от одного из лучших преподавателей в мире",
   "price": 80500,
   "id": "udovolstvie-ot-x",
-  "type": "science"
+  "type": "science",
+  "autor":"Стивен Строгац",
+  "publish": "Эксмо",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/analiticheskaya-kultura",
   "name": "Аналитическая культура",
   "desc": "От сбора данных до бизнес-результатов",
   "price": 108400,
   "id": "analiticheskaya-kultura",
-  "type": "business"
+  "type": "business",
+  "autor":"Дорис Бахманн-Медик",
+  "publish": "КСД",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/marketing-ot-potrebitelya",
   "name": "Маркетинг от потребителя",
   "desc": "",
   "price": 121500,
   "id": "marketing-ot-potrebitelya",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Роджер Бест",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/strategiya-e-mail-marketinga",
   "name": "Стратегия e-mail-маркетинга",
   "desc": "Эффективные рассылки для вашего бизнеса",
   "price": 72200,
   "id": "strategiya-e-mail-marketinga",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Виталий Александров",
+  "publish": "Олимп-Бизнес",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/ogilvi-o-reklame",
   "name": "Огилви о рекламе",
-  "desc": "",
+  "desc": "Многочисленные истории реальных проектов, блестящих идей, а иногда и неудачных решений.",
   "price": 129600,
   "id": "ogilvi-o-reklame",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Дэвид Огилви",
+  "publish": "Олимп-Бизнес",
+  "year": "2012",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/obnovit-stranitsu",
   "name": "Обновить страницу",
   "desc": "О трансформации Microsoft и технологиях будущего от первого лица",
   "price": 82000,
   "id": "obnovit-stranitsu",
-  "type": "business"
+  "type": "programming",
+  "autor":"Сатья Наделла",
+  "publish": "МИФ",
+  "year": "2015",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/putevoditel-po-lzhi",
   "name": "Путеводитель по лжи",
   "desc": "Критическое мышление в эпоху постправды",
   "price": 76100,
   "id": "putevoditel-po-lzhi",
-  "type": "science"
+  "type": "psychology",
+  "autor":"Дэниел Левитин",
+  "publish": "МИФ",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/risovyy-shturm-i-esche-21-sposob-myslit-nestandartno",
   "name": "Рисовый штурм и еще 21 способ мыслить нестандартно",
-  "desc": "",
+  "desc": "Эта книга научит вас мыслить нестандартно и находить неординарные решения проблем.",
   "price": 82900,
   "id": "risovyy-shturm-i-esche-21-sposob-myslit-nestandartno",
-  "type": "creativity"
+  "type": "psychology",
+  "autor":"Майкл Микалко",
+  "publish": "МИФ",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/sdelano-chtoby-prilipat",
   "name": "Сделано, чтобы прилипать",
   "desc": "Почему одни идеи выживают, а другие умирают",
   "price": 71400,
   "id": "sdelano-chtoby-prilipat",
-  "type": "creativity"
+  "type": "design",
+  "autor":"Чип Хиз",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/gibkiy-um",
   "name": "Гибкий ум",
   "desc": "Как видеть вещи иначе и думать нестандартно",
   "price": 80500,
   "id": "gibkiy-um",
-  "type": "creativity"
+  "type": "psychology",
+  "autor":"Бахрах Эстанислао",
+  "publish": "Эксмо",
+  "year": "2018",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/zarazitelnyy",
   "name": "Заразительный",
   "desc": "Психология сарафанного радио. Как продукты и идеи становятся популярными",
   "price": 70100,
   "id": "zarazitelnyy",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Йон Бергер",
+  "publish": "Эксмо",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/kak-privesti-dela-v-poryadok",
   "name": "Как привести дела в порядок",
   "desc": "Искусство продуктивности без стресса",
   "price": 76700,
   "id": "kak-privesti-dela-v-poryadok",
-  "type": "business"
+  "type": "business",
+  "autor":"Дэвид Аллен",
+  "publish": "КСД",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/sozdavaya-bestseller",
   "name": "Создавая бестселлер",
   "desc": "Шаг за шагом к захватывающему сюжету, сильной сцене и цельной композиции",
   "price": 62500,
   "id": "sozdavaya-bestseller",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Марта Олдерсон",
+  "publish": "КСД",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/marketing-v-sotsialnykh-setyakh",
   "name": "Маркетинг в социальных сетях",
-  "desc": "",
+  "desc": "Это первое руководство по маркетингу в социальных сетях от российского практика.",
   "price": 73500,
   "id": "marketing-v-sotsialnykh-setyakh",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Дамир Халилов",
+  "publish": "МИФ",
+  "year": "2015",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/nudge",
   "name": "Nudge",
   "desc": "Архитектура выбора",
   "price": 86500,
   "id": "nudge",
-  "type": "science"
+  "type": "psychology",
+  "autor":"Ричард Талер",
+  "publish": "МИФ",
+  "year": "2011",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/imarketing",
   "name": "iМаркетинг",
   "desc": "Работаем по системе",
   "price": 69700,
   "id": "imarketing",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Ричард Талер",
+  "publish": "Олимп-Бизнес",
+  "year": "2016",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/gen-direktora",
   "name": "Ген директора",
   "desc": "17 правил позитивного менеджмента по-русски",
   "price": 73100,
   "id": "gen-direktora",
-  "type": "business"
+  "type": "business",
+  "autor":"Владимир Моженков",
+  "publish": "Олимп-Бизнес",
+  "year": "2014",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/psikhologiya-ubezhdeniya",
   "name": "Психология убеждения",
   "desc": "50 доказанных способов быть убедительным",
   "price": 80500,
   "id": "psikhologiya-ubezhdeniya",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Роберт Чалдини",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/fioletovaya-korova",
   "name": "Фиолетовая корова",
   "desc": "Сделайте свой бизнес выдающимся",
   "price": 67600,
   "id": "fioletovaya-korova",
-  "type": "marketing"
+  "type": "business",
+  "autor":"Сет Годин",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/tsvetovoy-kvest-goroda",
   "name": "Цветовой квест. ГОРОДА",
   "desc": "30 непростых картин по номерам",
   "price": 63500,
   "id": "tsvetovoy-kvest-goroda",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Джоанна Вебстер",
+  "publish": "МИФ",
+  "year": "2016",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/akvarelnye-peyzazhi",
   "name": "Акварельные пейзажи",
   "desc": "Основы, техники, эксперименты",
   "price": 82000,
   "id": "akvarelnye-peyzazhi",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Лев Нецветаев",
+  "publish": "МИФ",
+  "year": "2017",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/dao-fiziki",
   "name": "Дао физики",
   "desc": "Исследование параллелей между современной физикой и восточной философией",
   "price": 60800,
   "id": "dao-fiziki",
-  "type": "science"
+  "type": "science",
+  "autor":"Фритьоф Капра",
+  "publish": "МИФ",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/sozdayte-lichnyy-brend",
   "name": "Создайте личный бренд",
   "desc": "Как находить возможности, развиваться и выделяться",
   "price": 55200,
   "id": "sozdayte-lichnyy-brend",
-  "type": "creativity"
+  "type": "design",
+  "autor":"Юрген Саленбахер",
+  "publish": "АСТ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/sdvig",
   "name": "Сдвиг",
   "desc": "Как выжить в стремительном будущем",
   "price": 85000,
   "id": "sdvig",
-  "type": "science"
+  "type": "science",
+  "autor":"Джой Ито",
+  "publish": "КСД",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/pyataya-distsiplina",
   "name": "Пятая дисциплина",
   "desc": "Искусство и практика обучающейся организации",
   "price": 120700,
   "id": "pyataya-distsiplina",
-  "type": "business"
+  "type": "business",
+  "autor":"Питер Сенге",
+  "publish": "МИФ",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/shkola-ceo",
   "name": "Школа CEO",
   "desc": "Мастер-классы от 20 глобальных лидеров",
   "price": 74400,
   "id": "shkola-ceo",
-  "type": "business"
+  "type": "business",
+  "autor":"Кирилл Кравченко",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/superpotrebiteli",
   "name": "Суперпотребители",
   "desc": "Кто это и почему они так важны для вашего бизнеса",
   "price": 87500,
   "id": "superpotrebiteli",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Эдди Юн",
+  "publish": "Эксмо",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/kak-ustroena-ekonomika",
   "name": "Как устроена экономика",
   "desc": "",
   "price": 73100,
   "id": "kak-ustroena-ekonomika",
-  "type": "science"
+  "type": "science",
+  "autor":"Ха-Джун Чанг",
+  "publish": "Олимп-Бизнес",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/dzen-kamera",
   "name": "Дзен-камера",
   "desc": "Шесть уроков творческого развития и осознанности",
   "price": 84000,
   "id": "dzen-kamera",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"Дэвид Ульрих",
+  "publish": "Олимп-Бизнес",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/liderstvo-i-samoobman",
   "name": "Лидерство и самообман",
   "desc": "Жизнь, свободная от шор",
   "price": 63700,
   "id": "liderstvo-i-samoobman",
-  "type": "business"
+  "type": "business",
+  "autor":"Институт Арбингера",
+  "publish": "Олимп-Бизнес",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/instrumenty-marketinga-dlya-otdela-prodazh",
   "name": "Инструменты маркетинга для отдела продаж",
   "desc": "«Оружие» для менеджеров по продажам до встречи с клиентами, на встрече и после встречи с ними",
   "price": 67100,
   "id": "instrumenty-marketinga-dlya-otdela-prodazh",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Екатерина Уколова",
+  "publish": "Олимп-Бизнес",
+  "year": "2013",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/kak-delaetsya-kino",
   "name": "Как делается кино",
   "desc": "",
   "price": 61600,
   "id": "kak-delaetsya-kino",
-  "type": "creativity"
+  "type": "creativity",
+  "autor":"",
+  "publish": "КСД",
+  "year": "2015",
+  "bind": "мягкий",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/glavnoe-v-istorii-iskusstv",
   "name": "Главное в истории искусств",
   "desc": "Ключевые работы, темы, направления, техники",
   "price": 85000,
   "id": "glavnoe-v-istorii-iskusstv",
-  "type": "creativity"
+  "type": "design",
+  "autor":"Ниа Гулд",
+  "publish": "МИФ",
+  "year": "2018",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/marketing-bez-byudzheta",
   "name": "Маркетинг без бюджета",
   "desc": "50 работающих инструментов",
   "price": 117700,
   "id": "marketing-bez-byudzheta",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Игорь Манн",
+  "publish": "МИФ",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/vzlom-marketinga",
   "name": "Взлом маркетинга",
   "desc": "Наука о том, почему мы покупаем",
   "price": 83700,
   "id": "vzlom-marketinga",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Фил Барден",
+  "publish": "МИФ",
+  "year": "2016",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/smeshat-no-ne-vzbaltyvat",
   "name": "Смешать, но не взбалтывать",
   "desc": "Рецепты организации мероприятий",
   "price": 79500,
   "id": "smeshat-no-ne-vzbaltyvat",
-  "type": "marketing"
+  "type": "marketing",
+  "autor":"Александр Шумович",
+  "publish": "Олимп-Бизнес",
+  "year": "2017",
+  "bind": "твёрдый",
+  "lng": "русский"
 }, {
   "thumb_url": "/books/thumb/strategiya-golubogo-okeana",
   "name": "Стратегия голубого океана",

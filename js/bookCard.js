@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
       newCard.querySelector('.card__title').textContent = books[i].name;
 
       newCard.querySelector('article').dataset.bookid = books[i].id;
+      newCard.querySelector('article').classList.add('j-' + books[i].type);
     
       fragment.appendChild(newCard);
     };
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
       productDiv.querySelector('.product__img-wrap>img').src = 'https://books.marinintim.com' + book.thumb_url;
       productDiv.querySelector('.product__title').innerHTML = book.name;
+      productDiv.querySelector('#autor').innerHTML = 'Автор: ' + book.autor;
       productDiv.querySelector('.rating__review').innerHTML = ' ';
 
       let tableInfo = productDiv.querySelector('.product__table-info');

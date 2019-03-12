@@ -191,6 +191,7 @@ function initCartView() {
   btnDec();
   btnRemove();
   btnClear();
+  btnSet();
 }
 
 
@@ -219,6 +220,20 @@ function btnDec() {
       let bookid = tr.dataset.bookid;
 
       cart.decQuantity(bookid);
+    }
+  });
+}
+
+function btnSet() {
+  document.querySelector('.cart__table').addEventListener('input', function (evt) {
+    let btn = findParentByCssClass(evt.srcElement, 'field-num__input');
+debugger
+    if (btn) {
+      evt.preventDefault();
+      let tr = queryParent(btn, 'tr.cart__product');
+      let bookid = tr.dataset.bookid;
+
+      cart.setQuantity(bookid);
     }
   });
 }

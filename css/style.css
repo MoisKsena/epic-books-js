@@ -2492,9 +2492,9 @@ a.pagination__item:focus {
   border-collapse: collapse;
 }
 
-.product__table-info th {
+/* .product__table-info th {
   width: 160px;
-}
+} */
 
 .product__table-info th,
 .product__table-info td {

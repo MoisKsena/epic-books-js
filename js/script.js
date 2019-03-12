@@ -14,7 +14,7 @@ cart.onUpdate(function (item, action) {
   else{
     console.log('Товар: ' + item.item.name + ' был ' + action + ' в кол-ве ' + item.quantity + '. Всего: ' + total.total + '; Скидки: ' + total.discount + '; Итого: ' + total.grandTotal);
   }
-  
+
   updateQuantityEl(this);
 
 
@@ -74,6 +74,30 @@ ready(function () {
 
   document.querySelectorAll('.tabs__item-link').forEach(lnk => lnk.addEventListener('click', tabsActive));
 
+
+
+  // var tabArray = books.filter(function (el) {
+  //   return el.type ==='business';
+  // });
+  // console.log(tabArray);
+
+
+
+  let tabsItems = document.querySelectorAll(".tabs__item-link");
+  tabsItems.forEach(tabItem => tabItem.addEventListener('click', function(evt){
+    evt.preventDefault();
+    tabData = tabItem.getAttribute('data-type');
+    var tabArray = books.filter(function (el) {
+      return el.type === tabData;
+    });
+    console.log(tabArray);
+    
+    console.log(tabData);
+  }));
+
+    
+  
+  
 
 
   // btn "в корзину"
