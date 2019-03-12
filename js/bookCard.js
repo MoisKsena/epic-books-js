@@ -8,13 +8,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
     for (i=0; i < 8; i++) {
       const newCard = template.content.cloneNode(true);
-      
-      newCard.querySelector('.card__img').src = 'https://books.marinintim.com' + books[i].thumb_url;
-      newCard.querySelector('.card__price').textContent = (books[i].price/100) + ' ₽';
-      newCard.querySelector('.card__title').textContent = books[i].name;
+      var book = books[i];
+        if(book.isnew){
+          newCard.querySelector('.card__new').style.display = "block";
+        }
+      newCard.querySelector('.card__img').src = 'https://books.marinintim.com' + book.thumb_url;
+      newCard.querySelector('.card__price').textContent = (book.price/100) + ' ₽';
+      newCard.querySelector('.card__title').textContent = book.name;
 
-      newCard.querySelector('article').dataset.bookid = books[i].id;
-      newCard.querySelector('article').classList.add('j-' + books[i].type);
+      newCard.querySelector('article').dataset.bookid = book.id;
+      newCard.querySelector('article').classList.add('j-' + book.type);
     
       fragment.appendChild(newCard);
     };

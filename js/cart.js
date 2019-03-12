@@ -174,7 +174,7 @@ function updateCartTotal(cart) {
   var total = cart.getTotal();
 
   let counterBookString = document.querySelector('.cart__title');
-  counterBookString.innerHTML = 'В корзине ' + total.totalItems + ' товара(ов)';
+  counterBookString.innerHTML = 'В корзине ' + total.totalItems + ' ' + plural(total.totalItems, ['товар', 'товара', 'товаров']);
 
   let counterGrandTotal = document.querySelectorAll('.j-grandTotal');
   for (var i = 0; i < counterGrandTotal.length; i++) {
@@ -226,14 +226,14 @@ function btnDec() {
 
 function btnSet() {
   document.querySelector('.cart__table').addEventListener('input', function (evt) {
-    let btn = findParentByCssClass(evt.srcElement, 'field-num__input');
-debugger
-    if (btn) {
+    let input = findParentByCssClass(evt.srcElement, 'field-num__input');
+
+    if (input) {
       evt.preventDefault();
-      let tr = queryParent(btn, 'tr.cart__product');
+      let tr = queryParent(input, 'tr.cart__product');
       let bookid = tr.dataset.bookid;
 
-      cart.setQuantity(bookid);
+      cart.setQuantity(bookid, parseInt(input.value));
     }
   });
 }

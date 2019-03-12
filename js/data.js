@@ -45,7 +45,8 @@ const books = [{
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "русский",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/otkrytoe-myshlenie",
   "name": "Открытое мышление",
@@ -81,7 +82,8 @@ const books = [{
   "publish": "МИФ",
   "year": "2018",
   "bind": "мягкий",
-  "lng": "русский"
+  "lng": "русский",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/urban-jungle",
   "name": "Urban Jungle",
@@ -165,7 +167,8 @@ const books = [{
   "publish": "АСТ",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "русский",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/biznes-kak-igra",
   "name": "Бизнес как игра",
@@ -225,7 +228,8 @@ const books = [{
   "publish": "Олимп-Бизнес",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "русский",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/ogilvi-o-reklame",
   "name": "Огилви о рекламе",
@@ -285,7 +289,8 @@ const books = [{
   "publish": "МИФ",
   "year": "2018",
   "bind": "мягкий",
-  "lng": "русский"
+  "lng": "русский",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/gibkiy-um",
   "name": "Гибкий ум",
