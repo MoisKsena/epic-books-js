@@ -1,3 +1,17 @@
+Array.prototype.skip = function(count)
+{
+  if(count >= this.length) return [];
+
+  return this.slice(count);
+}
+
+Array.prototype.take = function(count)
+{
+  count = Math.min(count, this.length);
+
+  return this.slice(0, count);
+}
+
 function updateQuantityEl(cart) {
   let counterBook = document.querySelector('.page-header__cart-num');
   counterBook.innerHTML = cart.getTotal().totalItems;

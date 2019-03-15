@@ -319,14 +319,21 @@ function removeProductView(item) {
 
 function initCart() {
   let orderForm = document.forms.orderForm;
-
+  orderForm.onkeypress = function(e) {
+    var key = e.charCode || e.keyCode || 0;     
+    if (key == 13) {
+      e.preventDefault();
+    }
+  }
   orderForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     return validateForm(this, 'submit', this, true);
   });
 
-  orderForm.querySelectorAll('input')
+  let checkout = document.querySelector('.cart__checkout');
+
+  checkout.querySelectorAll('input')
     .forEach(function (input) {
       if (input.type != 'checkbox') {
         input.addEventListener('input', function () {

@@ -5,11 +5,11 @@ const books = [{
   "price": 69700,
   "id": "klienty-na-vsyu-zhizn",
   "type": "marketing",
-  "autor":"Карл Сьюэлл",
+  "author":"Карл Сьюэлл",
   "publish": "МИФ",
   "year": "2010",
   "bind": "мягкий",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/tsennye-resheniya",
   "name": "Ценные решения",
@@ -17,11 +17,11 @@ const books = [{
   "price": 63700,
   "id": "tsennye-resheniya",
   "type": "marketing",
-  "autor":"Роман Тарасенко",
+  "author":"Роман Тарасенко",
   "publish": "МИФ",
   "year": "2012",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/45-tatuirovok-prodavana",
   "name": "45 татуировок продавана",
@@ -29,11 +29,11 @@ const books = [{
   "price": 67600,
   "id": "45-tatuirovok-prodavana",
   "type": "business",
-  "autor":"Максим Батырев",
+  "author":"Максим Батырев",
   "publish": "АСТ",
   "year": "2010",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/dnevnik-khudozhnika-naturalista",
   "name": "Дневник художника-натуралиста",
@@ -41,11 +41,11 @@ const books = [{
   "price": 169500,
   "id": "dnevnik-khudozhnika-naturalista",
   "type": "creativity",
-  "autor":"Джон Лоуз",
+  "author":"Джон Лоуз",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский",
+  "lng": "ru",
   "isnew": true
 }, {
   "thumb_url": "/books/thumb/otkrytoe-myshlenie",
@@ -54,11 +54,11 @@ const books = [{
   "price": 62500,
   "id": "otkrytoe-myshlenie",
   "type": "business",
-  "autor":"Арбингер",
+  "author":"Арбингер",
   "publish": "МИФ",
   "year": "2017",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/ne-delay-eto",
   "name": "Не делай это",
@@ -66,11 +66,12 @@ const books = [{
   "price": 85500,
   "id": "ne-delay-eto",
   "type": "creativity",
-  "autor":"Дональд Рос",
+  "author":"Дональд Рос",
   "publish": "КСД",
   "year": "2018",
   "bind": "мягкий",
-  "lng": "русский"
+  "lng": "ru",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/ya-khochu-bolshe-idey",
   "name": "Я хочу больше идей!",
@@ -78,11 +79,11 @@ const books = [{
   "price": 66700,
   "id": "ya-khochu-bolshe-idey",
   "type": "creativity",
-  "autor":"Стив Роулинг",
+  "author":"Стив Роулинг",
   "publish": "МИФ",
   "year": "2018",
   "bind": "мягкий",
-  "lng": "русский",
+  "lng": "ru",
   "isnew": true
 }, {
   "thumb_url": "/books/thumb/urban-jungle",
@@ -91,11 +92,12 @@ const books = [{
   "price": 80700,
   "id": "urban-jungle",
   "type": "design",
-  "autor":"Игорь Йосифович",
+  "author":"Игорь Йосифович",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "en",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/na-kryuchke",
   "name": "На крючке",
@@ -103,11 +105,11 @@ const books = [{
   "price": 59500,
   "id": "na-kryuchke",
   "type": "marketing",
-  "autor":"Нир Эяль",
+  "author":"Нир Эяль",
   "publish": "МИФ",
   "year": "2015",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/vmeste-bystree",
   "name": "Вместе быстрее",
@@ -115,11 +117,11 @@ const books = [{
   "price": 102500,
   "id": "vmeste-bystree",
   "type": "business",
-  "autor":"Лора Стэк",
+  "author":"Лора Стэк",
   "publish": "КСД",
   "year": "2017",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/iskrenniy-servis",
   "name": "Искренний сервис",
@@ -127,11 +129,11 @@ const books = [{
   "price": 63700,
   "id": "iskrenniy-servis",
   "type": "psychology",
-  "autor":"Лора Стэк",
+  "author":"Лора Стэк",
   "publish": "Олимп-Бизнес",
   "year": "2016",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/okhotnik-za-ideyami",
   "name": "Охотник за идеями",
@@ -139,11 +141,12 @@ const books = [{
   "price": 67100,
   "id": "okhotnik-za-ideyami",
   "type": "business",
-  "autor":"Семён Кибало",
+  "author":"Семён Кибало",
   "publish": "Олимп-Бизнес",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/psikhologiya",
   "name": "Психология",
@@ -151,11 +154,11 @@ const books = [{
   "price": 68800,
   "id": "psikhologiya",
   "type": "psychology",
-  "autor":"Пол Клейман",
+  "author":"Пол Клейман",
   "publish": "Олимп-Бизнес",
   "year": "2016",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "en"
 }, {
   "thumb_url": "/books/thumb/tramp-i-epokha-postpravdy",
   "name": "Трамп и эпоха постправды",
@@ -163,11 +166,11 @@ const books = [{
   "price": 72200,
   "id": "tramp-i-epokha-postpravdy",
   "type": "science",
-  "autor":"Кен Уилбер",
+  "author":"Кен Уилбер",
   "publish": "АСТ",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский",
+  "lng": "ru",
   "isnew": true
 }, {
   "thumb_url": "/books/thumb/biznes-kak-igra",
@@ -176,11 +179,11 @@ const books = [{
   "price": 69700,
   "id": "biznes-kak-igra",
   "type": "marketing",
-  "autor":"Дмитрий Борисов",
+  "author":"Дмитрий Борисов",
   "publish": "Эксмо",
   "year": "2016",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "en"
 }, {
   "thumb_url": "/books/thumb/udovolstvie-ot-x",
   "name": "Удовольствие от x",
@@ -188,11 +191,11 @@ const books = [{
   "price": 80500,
   "id": "udovolstvie-ot-x",
   "type": "science",
-  "autor":"Стивен Строгац",
+  "author":"Стивен Строгац",
   "publish": "Эксмо",
   "year": "2016",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/analiticheskaya-kultura",
   "name": "Аналитическая культура",
@@ -200,11 +203,11 @@ const books = [{
   "price": 108400,
   "id": "analiticheskaya-kultura",
   "type": "business",
-  "autor":"Дорис Бахманн-Медик",
+  "author":"Дорис Бахманн-Медик",
   "publish": "КСД",
   "year": "2017",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/marketing-ot-potrebitelya",
   "name": "Маркетинг от потребителя",
@@ -212,11 +215,12 @@ const books = [{
   "price": 121500,
   "id": "marketing-ot-potrebitelya",
   "type": "marketing",
-  "autor":"Роджер Бест",
+  "author":"Роджер Бест",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru",
+  "isnew": true
 }, {
   "thumb_url": "/books/thumb/strategiya-e-mail-marketinga",
   "name": "Стратегия e-mail-маркетинга",
@@ -224,11 +228,11 @@ const books = [{
   "price": 72200,
   "id": "strategiya-e-mail-marketinga",
   "type": "marketing",
-  "autor":"Виталий Александров",
+  "author":"Виталий Александров",
   "publish": "Олимп-Бизнес",
   "year": "2018",
   "bind": "твёрдый",
-  "lng": "русский",
+  "lng": "ru",
   "isnew": true
 }, {
   "thumb_url": "/books/thumb/ogilvi-o-reklame",
@@ -237,11 +241,11 @@ const books = [{
   "price": 129600,
   "id": "ogilvi-o-reklame",
   "type": "marketing",
-  "autor":"Дэвид Огилви",
+  "author":"Дэвид Огилви",
   "publish": "Олимп-Бизнес",
   "year": "2012",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/obnovit-stranitsu",
   "name": "Обновить страницу",
@@ -249,11 +253,11 @@ const books = [{
   "price": 82000,
   "id": "obnovit-stranitsu",
   "type": "programming",
-  "autor":"Сатья Наделла",
+  "author":"Сатья Наделла",
   "publish": "МИФ",
   "year": "2015",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/putevoditel-po-lzhi",
   "name": "Путеводитель по лжи",
@@ -261,11 +265,11 @@ const books = [{
   "price": 76100,
   "id": "putevoditel-po-lzhi",
   "type": "psychology",
-  "autor":"Дэниел Левитин",
+  "author":"Дэниел Левитин",
   "publish": "МИФ",
   "year": "2017",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/risovyy-shturm-i-esche-21-sposob-myslit-nestandartno",
   "name": "Рисовый штурм и еще 21 способ мыслить нестандартно",
@@ -273,11 +277,11 @@ const books = [{
   "price": 82900,
   "id": "risovyy-shturm-i-esche-21-sposob-myslit-nestandartno",
   "type": "psychology",
-  "autor":"Майкл Микалко",
+  "author":"Майкл Микалко",
   "publish": "МИФ",
   "year": "2017",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/sdelano-chtoby-prilipat",
   "name": "Сделано, чтобы прилипать",
@@ -285,7 +289,7 @@ const books = [{
   "price": 71400,
   "id": "sdelano-chtoby-prilipat",
   "type": "design",
-  "autor":"Чип Хиз",
+  "author":"Чип Хиз",
   "publish": "МИФ",
   "year": "2018",
   "bind": "мягкий",
@@ -298,7 +302,7 @@ const books = [{
   "price": 80500,
   "id": "gibkiy-um",
   "type": "psychology",
-  "autor":"Бахрах Эстанислао",
+  "author":"Бахрах Эстанислао",
   "publish": "Эксмо",
   "year": "2018",
   "bind": "мягкий",
@@ -310,7 +314,7 @@ const books = [{
   "price": 70100,
   "id": "zarazitelnyy",
   "type": "marketing",
-  "autor":"Йон Бергер",
+  "author":"Йон Бергер",
   "publish": "Эксмо",
   "year": "2017",
   "bind": "твёрдый",
@@ -322,11 +326,11 @@ const books = [{
   "price": 76700,
   "id": "kak-privesti-dela-v-poryadok",
   "type": "business",
-  "autor":"Дэвид Аллен",
+  "author":"Дэвид Аллен",
   "publish": "КСД",
   "year": "2017",
   "bind": "твёрдый",
-  "lng": "русский"
+  "lng": "ru"
 }, {
   "thumb_url": "/books/thumb/sozdavaya-bestseller",
   "name": "Создавая бестселлер",
@@ -334,7 +338,7 @@ const books = [{
   "price": 62500,
   "id": "sozdavaya-bestseller",
   "type": "creativity",
-  "autor":"Марта Олдерсон",
+  "author":"Марта Олдерсон",
   "publish": "КСД",
   "year": "2018",
   "bind": "твёрдый",
@@ -346,7 +350,7 @@ const books = [{
   "price": 73500,
   "id": "marketing-v-sotsialnykh-setyakh",
   "type": "marketing",
-  "autor":"Дамир Халилов",
+  "author":"Дамир Халилов",
   "publish": "МИФ",
   "year": "2015",
   "bind": "твёрдый",
@@ -358,7 +362,7 @@ const books = [{
   "price": 86500,
   "id": "nudge",
   "type": "psychology",
-  "autor":"Ричард Талер",
+  "author":"Ричард Талер",
   "publish": "МИФ",
   "year": "2011",
   "bind": "мягкий",
@@ -370,7 +374,7 @@ const books = [{
   "price": 69700,
   "id": "imarketing",
   "type": "marketing",
-  "autor":"Ричард Талер",
+  "author":"Ричард Талер",
   "publish": "Олимп-Бизнес",
   "year": "2016",
   "bind": "мягкий",
@@ -382,7 +386,7 @@ const books = [{
   "price": 73100,
   "id": "gen-direktora",
   "type": "business",
-  "autor":"Владимир Моженков",
+  "author":"Владимир Моженков",
   "publish": "Олимп-Бизнес",
   "year": "2014",
   "bind": "мягкий",
@@ -394,7 +398,7 @@ const books = [{
   "price": 80500,
   "id": "psikhologiya-ubezhdeniya",
   "type": "marketing",
-  "autor":"Роберт Чалдини",
+  "author":"Роберт Чалдини",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
@@ -406,7 +410,7 @@ const books = [{
   "price": 67600,
   "id": "fioletovaya-korova",
   "type": "business",
-  "autor":"Сет Годин",
+  "author":"Сет Годин",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
@@ -418,7 +422,7 @@ const books = [{
   "price": 63500,
   "id": "tsvetovoy-kvest-goroda",
   "type": "creativity",
-  "autor":"Джоанна Вебстер",
+  "author":"Джоанна Вебстер",
   "publish": "МИФ",
   "year": "2016",
   "bind": "мягкий",
@@ -430,7 +434,7 @@ const books = [{
   "price": 82000,
   "id": "akvarelnye-peyzazhi",
   "type": "creativity",
-  "autor":"Лев Нецветаев",
+  "author":"Лев Нецветаев",
   "publish": "МИФ",
   "year": "2017",
   "bind": "мягкий",
@@ -442,7 +446,7 @@ const books = [{
   "price": 60800,
   "id": "dao-fiziki",
   "type": "science",
-  "autor":"Фритьоф Капра",
+  "author":"Фритьоф Капра",
   "publish": "МИФ",
   "year": "2017",
   "bind": "твёрдый",
@@ -454,7 +458,7 @@ const books = [{
   "price": 55200,
   "id": "sozdayte-lichnyy-brend",
   "type": "design",
-  "autor":"Юрген Саленбахер",
+  "author":"Юрген Саленбахер",
   "publish": "АСТ",
   "year": "2018",
   "bind": "твёрдый",
@@ -466,7 +470,7 @@ const books = [{
   "price": 85000,
   "id": "sdvig",
   "type": "science",
-  "autor":"Джой Ито",
+  "author":"Джой Ито",
   "publish": "КСД",
   "year": "2017",
   "bind": "твёрдый",
@@ -478,7 +482,7 @@ const books = [{
   "price": 120700,
   "id": "pyataya-distsiplina",
   "type": "business",
-  "autor":"Питер Сенге",
+  "author":"Питер Сенге",
   "publish": "МИФ",
   "year": "2017",
   "bind": "твёрдый",
@@ -490,7 +494,7 @@ const books = [{
   "price": 74400,
   "id": "shkola-ceo",
   "type": "business",
-  "autor":"Кирилл Кравченко",
+  "author":"Кирилл Кравченко",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
@@ -502,7 +506,7 @@ const books = [{
   "price": 87500,
   "id": "superpotrebiteli",
   "type": "marketing",
-  "autor":"Эдди Юн",
+  "author":"Эдди Юн",
   "publish": "Эксмо",
   "year": "2017",
   "bind": "твёрдый",
@@ -514,7 +518,7 @@ const books = [{
   "price": 73100,
   "id": "kak-ustroena-ekonomika",
   "type": "science",
-  "autor":"Ха-Джун Чанг",
+  "author":"Ха-Джун Чанг",
   "publish": "Олимп-Бизнес",
   "year": "2016",
   "bind": "твёрдый",
@@ -526,7 +530,7 @@ const books = [{
   "price": 84000,
   "id": "dzen-kamera",
   "type": "creativity",
-  "autor":"Дэвид Ульрих",
+  "author":"Дэвид Ульрих",
   "publish": "Олимп-Бизнес",
   "year": "2018",
   "bind": "твёрдый",
@@ -538,7 +542,7 @@ const books = [{
   "price": 63700,
   "id": "liderstvo-i-samoobman",
   "type": "business",
-  "autor":"Институт Арбингера",
+  "author":"Институт Арбингера",
   "publish": "Олимп-Бизнес",
   "year": "2018",
   "bind": "твёрдый",
@@ -550,7 +554,7 @@ const books = [{
   "price": 67100,
   "id": "instrumenty-marketinga-dlya-otdela-prodazh",
   "type": "marketing",
-  "autor":"Екатерина Уколова",
+  "author":"Екатерина Уколова",
   "publish": "Олимп-Бизнес",
   "year": "2013",
   "bind": "твёрдый",
@@ -562,7 +566,7 @@ const books = [{
   "price": 61600,
   "id": "kak-delaetsya-kino",
   "type": "creativity",
-  "autor":"",
+  "author":"",
   "publish": "КСД",
   "year": "2015",
   "bind": "мягкий",
@@ -574,7 +578,7 @@ const books = [{
   "price": 85000,
   "id": "glavnoe-v-istorii-iskusstv",
   "type": "design",
-  "autor":"Ниа Гулд",
+  "author":"Ниа Гулд",
   "publish": "МИФ",
   "year": "2018",
   "bind": "твёрдый",
@@ -586,7 +590,7 @@ const books = [{
   "price": 117700,
   "id": "marketing-bez-byudzheta",
   "type": "marketing",
-  "autor":"Игорь Манн",
+  "author":"Игорь Манн",
   "publish": "МИФ",
   "year": "2016",
   "bind": "твёрдый",
@@ -598,7 +602,7 @@ const books = [{
   "price": 83700,
   "id": "vzlom-marketinga",
   "type": "marketing",
-  "autor":"Фил Барден",
+  "author":"Фил Барден",
   "publish": "МИФ",
   "year": "2016",
   "bind": "твёрдый",
@@ -610,7 +614,7 @@ const books = [{
   "price": 79500,
   "id": "smeshat-no-ne-vzbaltyvat",
   "type": "marketing",
-  "autor":"Александр Шумович",
+  "author":"Александр Шумович",
   "publish": "Олимп-Бизнес",
   "year": "2017",
   "bind": "твёрдый",
