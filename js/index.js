@@ -113,11 +113,11 @@ toShow.addEventListener('click', function(evt){
     }
 
 
-
-
-
-
-
+    
+    if(filter.sortBy)
+    {
+      accepted = accepted && (book.sortBy == filter.sortBy);
+    }
 
 
     return accepted;
@@ -132,6 +132,7 @@ toShow.addEventListener('click', function(evt){
 
 //сортировка по возрастанию
 
+
 books.sort(function(a, b){
   var keyA = new Date(a.price),
       keyB = new Date(b.price);
@@ -141,9 +142,23 @@ books.sort(function(a, b){
   return 0;
 });
 
+//по убыванию
+books.sort(function(a, b){
+  var keyA = new Date(a.price),
+      keyB = new Date(b.price);
 
+  return keyB - keyA;
+  
+});
 
+//по возрастанию
+books.sort(function(a, b){
+  var keyA = new Date(a.price),
+      keyB = new Date(b.price);
 
+  return keyA - keyB;
+  
+});
 
 
 

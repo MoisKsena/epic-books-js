@@ -198,7 +198,7 @@ ready(function () {
   }
 
   // Выбор диапазона цен
-  /*var slider = document.getElementById('price-range');
+  var slider = document.getElementById('price-range');
   noUiSlider.create(slider, {
     start: [400, 1000],
     connect: true,
@@ -207,7 +207,7 @@ ready(function () {
       'min': 200,
       'max': 2000
     }
-  });*/
+  });
 
 });
 
