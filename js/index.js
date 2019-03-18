@@ -111,15 +111,7 @@ toShow.addEventListener('click', function(evt){
     {
       accepted = accepted && (book.lng == filter.lang);
     }
-
-
     
-    if(filter.sortBy)
-    {
-      accepted = accepted && (book.sortBy == filter.sortBy);
-    }
-
-
     return accepted;
   });
 
@@ -133,32 +125,32 @@ toShow.addEventListener('click', function(evt){
 //сортировка по возрастанию
 
 
-books.sort(function(a, b){
-  var keyA = new Date(a.price),
-      keyB = new Date(b.price);
-  // Compare the 2 dates
-  if(keyA < keyB) return -1;
-  if(keyA > keyB) return 1;
-  return 0;
-});
+// books.sort(function(a, b){
+//   var keyA = new Date(a.price),
+//       keyB = new Date(b.price);
+//   // Compare the 2 dates
+//   if(keyA < keyB) return -1;
+//   if(keyA > keyB) return 1;
+//   return 0;
+// });
 
-//по убыванию
-books.sort(function(a, b){
-  var keyA = new Date(a.price),
-      keyB = new Date(b.price);
+// //по убыванию
+// books.sort(function(a, b){
+//   var keyA = new Date(a.price),
+//       keyB = new Date(b.price);
 
-  return keyB - keyA;
+//   return keyB - keyA;
   
-});
+// });
 
-//по возрастанию
-books.sort(function(a, b){
-  var keyA = new Date(a.price),
-      keyB = new Date(b.price);
+// //по возрастанию
+// books.sort(function(a, b){
+//   var keyA = new Date(a.price),
+//       keyB = new Date(b.price);
 
-  return keyA - keyB;
+//   return keyA - keyB;
   
-});
+// });
 
 
 
@@ -177,4 +169,63 @@ document.addEventListener('DOMContentLoaded', function () {
       prevEl: '.popular__slider-btn--left',
     },
   });
+});
+
+
+
+
+
+
+
+
+
+
+
+// Кастомные селекты (кроме выбора языка)
+new Choices('.field-select:not(#lang) select.field-select__select', {
+  searchEnabled: false,
+  shouldSort: false,
+});
+// Кастомный селект выбора языка отдельно
+new Choices('#lang select.field-select__select', {
+  searchEnabled: false,
+  shouldSort: false,
+  callbackOnCreateTemplates: function (template) {
+    return {
+      item: (classNames, data) => {
+        return template(`
+          <div class="${classNames.item} ${data.highlighted ? classNames.highlightedState : classNames.itemSelectable}" data-item data-id="${data.id}" data-value="${data.value}" ${data.active ? 'aria-selected="true"' : ''} ${data.disabled ? 'aria-disabled="true"' : ''}>
+            ${getLangInSelectIcon(data.value)} ${data.label.substr(0,3)}
+          </div>
+        `);
+      },
+      choice: (classNames, data) => {
+        return template(`
+          <div class="${classNames.item} ${classNames.itemChoice} ${data.disabled ? classNames.itemDisabled : classNames.itemSelectable}" data-select-text="${this.config.itemSelectText}" data-choice ${data.disabled ? 'data-choice-disabled aria-disabled="true"' : 'data-choice-selectable'} data-id="${data.id}" data-value="${data.value}" ${data.groupId > 0 ? 'role="treeitem"' : 'role="option"'}>
+            ${getLangInSelectIcon(data.value)} ${data.label}
+          </div>
+        `);
+      },
+    };
+  }
+});
+
+function getLangInSelectIcon(value) {
+ if (value == 'ru') return '<span class="field-select__lang-ru"></span>';
+ else if (value == 'en') return '<span class="field-select__lang-en"></span>';
+ return '<span class="field-select__lang-null"></span>';
+}
+
+
+
+// Выбор диапазона цен
+var slider = document.getElementById('price-range');
+noUiSlider.create(slider, {
+  start: [400, 1000],
+  connect: true,
+  step: 100,
+  range: {
+    'min': 200,
+    'max': 2000
+  }
 });
