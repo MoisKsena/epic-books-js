@@ -75,7 +75,19 @@ toShow.addEventListener('click', function(evt){
   evt.preventDefault();
   var filter = getFilter();
 
-  var filteredBooks = books.filter(function(book){
+  var filteredBooks = books;
+  if(filter.sortBy == 2)
+  {
+    filteredBooks = filteredBooks.sort(function (a,b)
+    {
+      return a.price - b.price;
+       
+    });
+  } 
+  
+  
+  
+    filteredBooks = filteredBooks.filter(function(book){
     var accepted = true;
     if(filter.author)
     {
