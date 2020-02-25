@@ -3525,3 +3525,8 @@ a.pagination__item:focus {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+#map {
+  width: 680px;
+  height: 400px;
+}

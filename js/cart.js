@@ -101,6 +101,17 @@ function validateEmail(form, event, element, forceValidation) {
 
 function validateDeliveryFromStore(form, event, element, forceValidation) {};
 
+//самовывоз - показать карту
+
+const checkField = document.getElementsByName('pickup-points')[0]; //change select
+
+checkField.addEventListener("change", function (){
+  mapManager.panToStore(this.options[this.selectedIndex].value);
+});
+
+
+/////////////////////////////////////////
+
 function validateDeliveryCourier(form, event, element, forceValidation) {
 
   var shouldValidate = element.classList.contains('j-edited');

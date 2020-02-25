@@ -75,22 +75,7 @@ function closePopup() {
 };
 document.addEventListener('DOMContentLoaded', function () {
   
-
-
-
   renderBooks(books.take(8));
-
-
-
-
-
-
-
-
-
-
-
-
 
   let btnClosePopup = document.querySelector('.modal__close');
   btnClosePopup.addEventListener('click', event => {

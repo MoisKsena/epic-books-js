@@ -19,6 +19,9 @@
       document.querySelector('html').classList.replace('no-js', 'js');
       'ontouchstart'in window ? document.querySelector('html').classList.add('touch') : document.querySelector('html').classList.add('no-touch');
     </script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=b80a367b-189e-4483-b762-2e9d276a4e62" type="text/javascript"></script>
+    <script type="text/javascript" src="https://yandex.st/jquery/2.2.3/jquery.js"></script>
+    <script src="js/map.js" type="text/javascript"></script>
   </head>
   <body>
     <noscript>У вас отключен JavaScript. Это пугает.</noscript>
@@ -244,14 +247,15 @@
                   <div class="field-select  field-select--pickup">
                     <div class="field-select__name">Пункты самовывоза</div>
                     <div class="field-select__select-wrap">
-                      <select class="field-select__select" name="pickup-points">
-                        <option value="1">Малая каштановая аллея, 9 , м. Площадь Александра Невского-2 </option>
-                        <option value="2">ул. конунга Ульянова, 18/49, м. Петроградская</option>
+                      <select class="field-select__select" name="pickup-points"  id="suggest">
+                        <option value="1">Малая каштановая аллея, 9, м. Дунайская</option>
+                        <option value="2">ул. Ординарная улица, 4, м. Петроградская</option>
                         <option value="3">Кронверкский проспект, 23, м. Горьковская</option>
                       </select>
                     </div>
                   </div>
-                  <div class="checkout__map" id="checkout-map">map place</div>
+                  <div class="checkout__map" id="map">
+                  </div>
                 </div>
                 <div class="cart__delivery cart__delivery--hidden" id="cart-delivery-2">
                   <div class="cart__courier-data">
@@ -343,13 +347,13 @@
                   </div>
                 </div>
                 <!-- field-text--input-error для ошибочного состояния поля с промокодом-->
-                <label class="field-text  field-text--bg-gray field-text--promocode field-text--input-checked cart__promocode" style="display:none;">
+                <label class="field-text  field-text--bg-gray field-text--promocode field-text--input-checked cart__promocode">
                   <span class="field-text__name">Промокод</span>
                   <span class="field-text__input-wrap">
                     <input class="field-text__input" type="text" value="CORRECT_CODE" name="promocode"/>
                   </span>
                 </label>
-                <p class="checkout__discount" style="display:none;">
+                <p class="checkout__discount">
                   Скидка: <strong class="checkout__discount-num" id="checkout-discount-num">- 150 ₽</strong>
                 </p>
               </fieldset>
